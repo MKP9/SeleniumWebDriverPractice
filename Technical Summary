@@ -1,0 +1,105 @@
+Michael Peterson
+IT_372
+Assignment #10
+Selenium Web Driver
+
+How to use Selenium Web Driver with a Chrome Browser using inteliJ – Java – Maven.
+
+Here is a step by step of my process to start using Selenium Web Driver, using inteliJ (Java and Maven).
+
+1.	The first thing I did: Google Selenium Web Driver, how to implement with inteliJ and Java and Maven.  (See sources below.)
+
+2.	Read site information, forums, watch informal tutorial videos.
+
+3.	I added a Selenium dependency to my Pom files.  Others have mentioned that they didn’t complete this step and they successfully ran Selenium Chrome Web Driver. This was the latest dependency that I found and added to my Pom file.
+
+ <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.7.0</version>
+ </dependency>
+
+4.	I added the Selenium Chrome Driver Jar files to the Project Structure.
+
+5.	Create a test Class and try and open a Google Chrome browser window.
+
+6.	Create sample test cases for pass and fail tests.
+
+/*************************************************************************/
+Below are screen shots, dependency code sample, navigation steps, link for finding the dependency script, 
+and a link for the Jar file download.  
+
+All reference links can be found under Sources at the end of this file.
+ 
+/*************************************************************************************/ 
+Dependency – Adding to your Pom:
+Find the correct dependency for your application and add it to your pom file
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>3.7.0</version>
+</dependency>
+
+•	Reference link.
+o	http://www.seleniumhq.org/download/maven.jsp
+
+/***************************************************************************/
+Selenium Jar files: Add to project structure
+Find the correct Selenium jar lib files needed to use Selenium in inteliJ IDE; 
+download and make sure you add these to your inteliJ IDE.  
+•	Reference link.
+o	http://www.seleniumhq.org/download/
+
+/**************************************************************************/
+Navigation in inteliJ to Add Jar Files
+File -> Project Structure -> Dependencies -> “+” symbol -> JARs or Directories -> 
+“Navigate to where you placed your downloaded jar lib files -> “Select all JAR files inside LIB folder ->
+click OK -> check all lib jar files you just added -> press OK
+
+/*************************************************************************/
+Testing Selenium with Chrome
+Write a simple Launch Class to test to see if Selenium is functioning.
+
+public class MyFirstTest {
+
+    @Test
+    public void startWebDriver() {
+
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Michael\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+
+        driver.navigate().to("http://seleniumsimplified.com");
+
+        Assert.assertTrue("title should start differently",
+                driver.getTitle().startsWith("Selenium Simplified"));
+
+        driver.close();
+    }
+}
+
+/**********************************************************************************/
+Sources:
+
+http://www.seleniumhq.org/docs/03_webdriver.jsp#running-standalone-selenium-server-for-use-with-remotedrivers
+
+https://www.youtube.com/watch?v=x--AeT1046c
+
+https://sites.google.com/a/chromium.org/chromedriver/getting-started
+
+https://www.guru99.com/intellij-selenium-webdriver.html#4
+
+http://www.seleniumhq.org/download/maven.jsp
+
+http://www.seleniumhq.org/download/
+
+https://stackoverflow.com/questions/30799545/selenium-web-driver-findelementby-name-and-headless-browser
+
+https://idodevjobs.wordpress.com/2015/08/16/java-selenium-acceptance-test-example-part-i/
+
+https://www.youtube.com/watch?v=nqaY0UgRcFQ
+
+https://sites.google.com/a/chromium.org/chromedriver/
+
+
+
+
