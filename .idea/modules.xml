@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Selenium_Guru99.iml" filepath="$PROJECT_DIR$/Selenium_Guru99.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Selenium_Web_Driver_Practice.iml" filepath="$PROJECT_DIR$/Selenium_Web_Driver_Practice.iml" />
     </modules>
   </component>
 </project>
